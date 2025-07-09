@@ -1,5 +1,5 @@
 <ul class="tabletList" *ngIf="screenType === 'tablet'" nz-menu nzMode="horizontal">
-    <li nz-menu-item *ngFor="let item of menuItems" [nzMatchRouter]="true"[routerLink]="item.path">
+    <li nz-menu-item *ngFor="let item of menuItems" [nzMatchRouter]="true" (click)="navigate(item.path)">
         <span>{{item.label}}</span>
     </li>
 </ul>
@@ -10,7 +10,7 @@
     </button>
     <div class="mobileMenu" *ngIf="isCollapsed">
         <ul  nz-menu nzMode="inline" nzTheme="dark">
-            <li nz-menu-item *ngFor="let item of menuItems" [nzMatchRouter]="true"[routerLink]="item.path">
+            <li nz-menu-item *ngFor="let item of menuItems" [nzMatchRouter]="true" (click)="navigate(item.path)">
                 <span>{{item.label}}</span>
             </li>
         </ul>

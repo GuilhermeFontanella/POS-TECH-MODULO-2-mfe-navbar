@@ -17,4 +17,8 @@ import { RouterModule } from '@angular/router';
 })
 export class LateralMenuComponent {
   public menuItems = menuItems;
+
+  public navigate(path: string): void {
+    window.dispatchEvent(new CustomEvent('mfe-navbar-navigate', {detail: path}))
+  }
 }

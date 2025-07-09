@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { AfterContentInit, Component, HostListener, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
@@ -29,6 +29,7 @@ export class NavbarComponent implements OnInit {
     this.screenType = checkScreenSize(window.innerWidth);
   }
   @Input() screenType: ScreenType = 'desktop';
+  
   isCollapsed: boolean = false;
   windowWidth: number = 0;
   public menuItems = menuItems;
@@ -44,6 +45,11 @@ export class NavbarComponent implements OnInit {
   }
 
   public navigate(path: string): void {
-    this.router.navigate([path]);
+    window.dispatchEvent(
+      new CustomEvent(
+        'mfe-navbar-navigate', 
+        { detail: path }
+      )
+    )
   }
 }
