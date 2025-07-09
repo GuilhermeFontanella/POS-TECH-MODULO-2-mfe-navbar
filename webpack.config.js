@@ -4,12 +4,12 @@ module.exports = withModuleFederationPlugin({
   name: 'mfeRemote',
   filename: 'remoteEntry.js',
   exposes: {
-    './TestComponent': './src/app/test/test.component.ts',
-    //'./OutroTesteComponent': './src/app/outro-teste/outro-teste.component.ts',
+    './NavbarComponent': './src/app/navbar/navbar.component.ts',
+    './LateralMenuComponent': './src/app/lateral-menu/lateral-menu.component.ts'
   },
 
   shared: {
     ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
   },
-
+  
 });
