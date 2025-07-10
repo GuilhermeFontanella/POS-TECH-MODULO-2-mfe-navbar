@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { Component, HostListener, Input, OnInit } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
@@ -33,8 +33,6 @@ export class NavbarComponent implements OnInit {
   isCollapsed: boolean = false;
   windowWidth: number = 0;
   public menuItems = menuItems;
-
-  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.screenType = checkScreenSize(window.innerWidth);
