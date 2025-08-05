@@ -1,10 +1,10 @@
 {
-  "name": "mfe-remote",
+  "name": "mfe-navbar",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build mfe-navbar --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
